@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Inicia sesión</h1>
+<p class="subtitle">
+    Ingresa a tu cuenta para continuar.
+</p>
+
+<form id="loginForm" method="post" action="@Url.Action("Login","Usuario")">
+    <div class="field">
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email"
+               placeholder="ejemplo@correo.com"
+               autocomplete="email" required>
+    </div>
+
+    <div class="field">
+        <label for="contrasena">Contraseña</label>
+        <input id="contrasena" name="contrasena"
+               type="password" placeholder="Ingresa tu contraseña"
+               autocomplete="current-password" required>
+    </div>
+
+    <div class="checkbox-field">
+        <input id="staylogged" type="checkbox">
+        <label for="staylogged">
+            Mantener la sesión iniciada
+        </label>
+    </div>
+
+    <button class="primary-button" type="submit">
+        INICIAR SESIÓN
+    </button>
+</form>
+@if (ViewBag.Mensaje != null)
+{
+    <p>@ViewBag.Mensaje</p>
+}
+<div class="separator">
+    <span>También puedes acceder con:</span>
+</div>
+
+<button class="social-button" type="button">
+    <span class="google-icon">G</span>
+    Continuar con Google
+</button>
+
+<button class="social-button" type="button">
+    <span class="facebook-icon">f</span>
+    Continuar con Facebook
+</button>
+
+<p class="login-text">
+    ¿No Tienes una cuenta?
+    <a>@Html.ActionLink("UNETE AHORA", "Register", "Usuario")</a>
+</p>

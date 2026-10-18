@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title | Platanitos</title>
+    @Styles.Render("~/Content/styles.css")
+
+</head>
+<body>
+    <main class="global-container">
+        <section class="global-card">
+
+            <a class="logo" href="#" aria-label="Platanitos">
+                platanitos<span>.</span>
+            </a>
+
+            <div class="container body-content">
+                @RenderBody()
+            </div>
+
+        </section>
+    </main>
+
+</body>
+</html>

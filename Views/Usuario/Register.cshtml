@@ -1,0 +1,131 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h1>Crea tu cuenta</h1>
+    <p class="subtitle">
+        Regístrate y disfruta de una experiencia de compra personalizada.
+    </p>
+
+    <form id="registerForm">
+        <div class="field">
+            <label for="phone">Teléfono</label>
+            <div class="phone-group">
+                <select id="country" aria-label="Código de país">
+                    <option value="+51">🇵🇪 +51</option>
+                    <option value="+52">🇲🇽 +52</option>
+                    <option value="+54">🇦🇷 +54</option>
+                    <option value="+56">🇨🇱 +56</option>
+                    <option value="+57">🇨🇴 +57</option>
+                    <option value="+1">🇺🇸 +1</option>
+                </select>
+                <input id="phone"
+                       name="phone"
+                       type="tel"
+                       placeholder="Ingresa tu teléfono"
+                       autocomplete="tel-national"
+                       required>
+            </div>
+        </div>
+
+        <div class="verification">
+            <span>Verificar con</span>
+            <label class="radio-option">
+                <input type="radio" name="verification"
+                       value="whatsapp" checked>
+                WhatsApp
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="verification" value="sms">
+                SMS
+            </label>
+        </div>
+
+        <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email"
+                   placeholder="ejemplo@correo.com"
+                   autocomplete="email" required>
+        </div>
+
+        <div class="field">
+            <label for="documentType">Tipo de documento</label>
+            <select id="documentType" name="documentType" required>
+                <option value="DNI">DNI</option>
+                <option value="CE">Carné de extranjería</option>
+                <option value="Pasaporte">Pasaporte</option>
+                <option value="Doc. Ident. País. Residencia">
+                    Doc. Ident. País de Residencia
+                </option>
+                <option value="ND">ND</option>
+                <option value="Salvoconducto">Salvoconducto</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label for="document">Documento</label>
+            <input id="document" name="document"
+                   type="text" placeholder="Número de documento"
+                   autocomplete="off" required>
+        </div>
+
+        <div class="field">
+            <label for="firstName">Nombres</label>
+            <input id="firstName" name="firstName"
+                   type="text" placeholder="Tus nombres"
+                   autocomplete="given-name" required>
+        </div>
+
+        <div class="field">
+            <label for="lastName">Apellidos</label>
+            <input id="lastName" name="lastName"
+                   type="text" placeholder="Tus apellidos"
+                   autocomplete="family-name" required>
+        </div>
+
+        <div class="checkbox-field">
+            <input id="terms" type="checkbox" required>
+            <label for="terms">
+                He leído y acepto los
+                <a href="https://platanitos.com/pe/" target="_blank"
+                   rel="noopener noreferrer">Términos y condiciones</a>
+                y la
+                <a href="https://platanitos.com/pe/" target="_blank"
+                   rel="noopener noreferrer">Política de Privacidad</a>.
+            </label>
+        </div>
+
+        <div class="checkbox-field">
+            <input id="marketing" type="checkbox">
+            <label for="marketing">
+                Autorizo el tratamiento de mis datos para fines de
+                prospección y promoción comercial.
+            </label>
+        </div>
+
+        <button class="primary-button" type="submit">
+            CREA TU CUENTA
+        </button>
+    </form>
+
+    <div class="separator">
+        <span>También puedes acceder con:</span>
+    </div>
+
+    <button class="social-button" type="button">
+        <span class="google-icon">G</span>
+        Continuar con Google
+    </button>
+
+    <button class="social-button" type="button">
+        <span class="facebook-icon">f</span>
+        Continuar con Facebook
+    </button>
+
+    <p class="login-text">
+        ¿Tienes una cuenta?
+        <a>@Html.ActionLink("INICIA SESIÓN", "Login", "Usuario")</a> 
+     
+    </p>
